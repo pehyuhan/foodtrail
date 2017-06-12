@@ -47,7 +47,6 @@ class ItemTableViewController: UITableViewController {
         return self.itemNames.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "Cell"
@@ -59,11 +58,13 @@ class ItemTableViewController: UITableViewController {
         cell.typeLabel.text = itemTypes[indexPath.row]
         cell.thumbnailImageView.image = UIImage(named: itemImages[indexPath.row])
         
+        cell.favorIconImageView.isHidden = !itemIsVisited[indexPath.row]
+        
         cell.thumbnailImageView.layer.cornerRadius = cell.thumbnailImageView.frame.size.width / 2
         cell.thumbnailImageView.clipsToBounds = true
         
         
-        cell.accessoryType = itemIsVisited[indexPath.row] ? .checkmark : .none
+//        cell.accessoryType = itemIsVisited[indexPath.row] ? .checkmark : .none
         
         return cell
     }
@@ -77,9 +78,11 @@ class ItemTableViewController: UITableViewController {
         
         let isVisitedAction = UIAlertAction(title: "I've been here", style: .default, handler: {
             (action:UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
+//            let cell = tableView.cellForRow(at: indexPath)
+//            cell?.accessoryType = .checkmark
+            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
             self.itemIsVisited[indexPath.row] = true
+            cell.favorIconImageView.isHidden = false
         })
         optionMenu.addAction(isVisitedAction)
         
@@ -87,9 +90,11 @@ class ItemTableViewController: UITableViewController {
         
         let isVisitedAction = UIAlertAction(title: "I've not been here", style: .default, handler: {
             (action:UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .none
+//            let cell = tableView.cellForRow(at: indexPath)
+//            cell?.accessoryType = .none
+            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
             self.itemIsVisited[indexPath.row] = false
+            cell.favorIconImageView.isHidden = true
         })
         optionMenu.addAction(isVisitedAction)
             
@@ -126,16 +131,56 @@ class ItemTableViewController: UITableViewController {
         return true
     }
     */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?
+    {
+        let shareAction =  UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share")
+        { action, index in
+            let shareMenu = UIAlertController(title: nil, message: "Share using", preferredStyle: .actionSheet)
+            let twitterAction = UIAlertAction(title: "Twitter", style: UIAlertActionStyle.default, handler: nil)
+            let facebookAction = UIAlertAction(title: "Facebook", style: UIAlertActionStyle.default, handler: nil)
+            let emailAction = UIAlertAction(title: "Email", style: UIAlertActionStyle.default,handler: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            shareMenu.addAction(twitterAction)
+            shareMenu.addAction(facebookAction)
+            shareMenu.addAction(emailAction)
+            shareMenu.addAction(cancelAction)
+            
+            self.present(shareMenu, animated: true, completion: nil)
+        }
+        
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete")
+        { action, index in
+            // Delete the row from the data source
+            self.itemNames.remove(at: indexPath.row)
+            self.itemLocations.remove(at: indexPath.row)
+            self.itemTypes.remove(at: indexPath.row)
+            self.itemIsVisited.remove(at: indexPath.row)
+            self.itemImages.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        
+        shareAction.backgroundColor = UIColor(red: 255.0/255.0, green: 166.0/255.0, blue:
+            51.0/255.0, alpha: 1.0)
+        deleteAction.backgroundColor = UIColor(red: 51.0/255.0, green: 51.0/255.0, blue:
+            51.0/255.0, alpha: 1.0)
+        
+        return [deleteAction, shareAction]
+    }
 
     /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            self.itemNames.remove(at: indexPath.row)
+            self.itemLocations.remove(at: indexPath.row)
+            self.itemTypes.remove(at: indexPath.row)
+            self.itemIsVisited.remove(at: indexPath.row)
+            self.itemImages.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -154,14 +199,22 @@ class ItemTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+//        let backItem = UIBarButtonItem()
+//        backItem.title = "Back"
+//        navigationItem.backBarButtonItem = backItem
+    
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+//        if segue.identifier == "showItemDetail" {
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                let destinationController = segue.destination as!
+//                DetailViewController
+//                destinationController.itemImage = self.itemImages[indexPath.row]
+//            } }
+//    }
 
 }
