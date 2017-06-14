@@ -69,60 +69,60 @@ class ItemTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        
-        // Create an option menu as an action sheet
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-        
-        if itemIsVisited[indexPath.row] == false {
-        
-        let isVisitedAction = UIAlertAction(title: "I've been here", style: .default, handler: {
-            (action:UIAlertAction!) -> Void in
-//            let cell = tableView.cellForRow(at: indexPath)
-//            cell?.accessoryType = .checkmark
-            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
-            self.itemIsVisited[indexPath.row] = true
-            cell.favorIconImageView.isHidden = false
-        })
-        optionMenu.addAction(isVisitedAction)
-        
-        } else {
-        
-        let isVisitedAction = UIAlertAction(title: "I've not been here", style: .default, handler: {
-            (action:UIAlertAction!) -> Void in
-//            let cell = tableView.cellForRow(at: indexPath)
-//            cell?.accessoryType = .none
-            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
-            self.itemIsVisited[indexPath.row] = false
-            cell.favorIconImageView.isHidden = true
-        })
-        optionMenu.addAction(isVisitedAction)
-            
-        }
-        
-        let addToListAction = UIAlertAction(title: "Add to Foodlist", style: .default, handler: {
-            (action:UIAlertAction!) -> Void in
-//            let cell = tableView.cellForRow(at: indexPath)
-//            cell?.accessoryType = .checkmark
-        })
-        optionMenu.addAction(addToListAction)
-        
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert);alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alertMessage, animated: true, completion: nil)
-        }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.default, handler: callActionHandler)
-        optionMenu.addAction(callAction)
-        
-        // Add actions to the menu
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil);optionMenu.addAction(cancelAction)
-        
-        // Display the menu
-        self.present(optionMenu, animated: true, completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+//        
+//        // Create an option menu as an action sheet
+//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+//        
+//        if itemIsVisited[indexPath.row] == false {
+//        
+//        let isVisitedAction = UIAlertAction(title: "I've been here", style: .default, handler: {
+//            (action:UIAlertAction!) -> Void in
+////            let cell = tableView.cellForRow(at: indexPath)
+////            cell?.accessoryType = .checkmark
+//            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
+//            self.itemIsVisited[indexPath.row] = true
+//            cell.favorIconImageView.isHidden = false
+//        })
+//        optionMenu.addAction(isVisitedAction)
+//        
+//        } else {
+//        
+//        let isVisitedAction = UIAlertAction(title: "I've not been here", style: .default, handler: {
+//            (action:UIAlertAction!) -> Void in
+////            let cell = tableView.cellForRow(at: indexPath)
+////            cell?.accessoryType = .none
+//            let cell = tableView.cellForRow(at: indexPath) as! CustomTableViewCell
+//            self.itemIsVisited[indexPath.row] = false
+//            cell.favorIconImageView.isHidden = true
+//        })
+//        optionMenu.addAction(isVisitedAction)
+//            
+//        }
+//        
+//        let addToListAction = UIAlertAction(title: "Add to Foodlist", style: .default, handler: {
+//            (action:UIAlertAction!) -> Void in
+////            let cell = tableView.cellForRow(at: indexPath)
+////            cell?.accessoryType = .checkmark
+//        })
+//        optionMenu.addAction(addToListAction)
+//        
+//        let callActionHandler = { (action:UIAlertAction!) -> Void in
+//            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert);alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alertMessage, animated: true, completion: nil)
+//        }
+//        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: UIAlertActionStyle.default, handler: callActionHandler)
+//        optionMenu.addAction(callAction)
+//        
+//        // Add actions to the menu
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil);optionMenu.addAction(cancelAction)
+//        
+//        // Display the menu
+//        self.present(optionMenu, animated: true, completion: nil)
+//        
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -201,20 +201,19 @@ class ItemTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-//        let backItem = UIBarButtonItem()
-//        backItem.title = "Back"
-//        navigationItem.backBarButtonItem = backItem
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-//        if segue.identifier == "showItemDetail" {
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                let destinationController = segue.destination as!
-//                DetailViewController
-//                destinationController.itemImage = self.itemImages[indexPath.row]
-//            } }
-//    }
+        if segue.identifier == "showItemDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! DetailViewController
+                destinationController.itemImage = self.itemImages[indexPath.row]
+            } }
+    }
 
 }
