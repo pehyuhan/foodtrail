@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Ty-XX-mNP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4Ty-XX-mNP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item Table View Controller-->
+        <!--FoodTrail-->
         <scene sceneID="MMs-FD-RHW">
             <objects>
                 <tableViewController id="Y2Q-fW-7gm" customClass="ItemTableViewController" customModule="FoodTrail" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="cZo-CK-vZa">
-                                            <rect key="frame" x="280" y="7" width="24" height="23"/>
+                                            <rect key="frame" x="279" y="7" width="25" height="23"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwo-KG-pwr">
@@ -62,7 +62,7 @@
                                     <outlet property="nameLabel" destination="ovA-hp-eUx" id="tcg-v5-vfV"/>
                                     <outlet property="thumbnailImageView" destination="lIQ-As-a7S" id="sRV-JM-wcr"/>
                                     <outlet property="typeLabel" destination="pAb-xM-s7T" id="BIA-f9-FKW"/>
-                                    <segue destination="BIx-ut-JPQ" kind="show" id="O8B-37-x3g"/>
+                                    <segue destination="BIx-ut-JPQ" kind="show" identifier="showItemDetail" id="O8B-37-x3g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -71,7 +71,7 @@
                             <outlet property="delegate" destination="Y2Q-fW-7gm" id="HWf-RN-T9r"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1xs-pk-kCY"/>
+                    <navigationItem key="navigationItem" title="FoodTrail" id="1xs-pk-kCY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFw-dn-g9Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,7 +90,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Zn-iN-UNG">
-                                <rect key="frame" x="0.0" y="98" width="375" height="280"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="280"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
