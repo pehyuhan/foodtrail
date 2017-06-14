@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5665B2B91EF13FC400E674AA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665B2B81EF13FC400E674AA /* Item.swift */; };
 		B8B960641EF04E5B00B72845 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B960631EF04E5B00B72845 /* DetailViewController.swift */; };
 		B8F1B0D51EEDB4950053B518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1B0D41EEDB4950053B518 /* AppDelegate.swift */; };
 		B8F1B0DA1EEDB4950053B518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F1B0D81EEDB4950053B518 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5665B2B81EF13FC400E674AA /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B8B960631EF04E5B00B72845 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B8F1B0D11EEDB4950053B518 /* FoodTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F1B0D41EEDB4950053B518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				B8F1B0D81EEDB4950053B518 /* Main.storyboard */,
 				B8F1B0DB1EEDB4950053B518 /* Assets.xcassets */,
 				B8F1B0E01EEDB4950053B518 /* Info.plist */,
+				5665B2B81EF13FC400E674AA /* Item.swift */,
 			);
 			path = FoodTrail;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5665B2B91EF13FC400E674AA /* Item.swift in Sources */,
 				B8F1B0EB1EEDBDC30053B518 /* CustomTableViewCell.swift in Sources */,
 				B8F1B0E71EEDB64C0053B518 /* ItemTableViewController.swift in Sources */,
 				B8F1B0D51EEDB4950053B518 /* AppDelegate.swift in Sources */,
