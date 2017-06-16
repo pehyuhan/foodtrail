@@ -36,7 +36,7 @@ class ItemTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,6 +47,11 @@ class ItemTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.hidesBarsOnSwipe = true
     }
 
     // MARK: - Table view data source
@@ -215,8 +220,9 @@ class ItemTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        
         let backItem = UIBarButtonItem()
-        backItem.title = "Back"
+        backItem.title = " "
         navigationItem.backBarButtonItem = backItem
     
         // Get the new view controller using segue.destinationViewController.
@@ -224,7 +230,7 @@ class ItemTableViewController: UITableViewController {
         if segue.identifier == "showItemDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! DetailViewController
-                destinationController.itemImage = self.items[indexPath.row].image
+                destinationController.item = items[indexPath.row]
             } }
     }
 
