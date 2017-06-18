@@ -12,6 +12,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet var itemImageView:UIImageView!
     @IBOutlet var tableView:UITableView!
+    
     var item:Item!
     
     override func viewDidLoad() {
@@ -51,6 +52,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             cell.backgroundColor = UIColor.clear
             
             // Configure the cell...
+            cell.mapButton.isHidden = true
+            
             switch indexPath.row {
             case 0:
                 cell.fieldLabel.text = "Name"
@@ -61,6 +64,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             case 2:
                 cell.fieldLabel.text = "Location"
                 cell.valueLabel.text = item.location
+                cell.mapButton.isHidden = false
             case 3:
                 cell.fieldLabel.text = "Been here"
                 cell.valueLabel.text = (item.isVisited) ? "Yes, I’ve been here before" : "No"
@@ -77,14 +81,17 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.item = item
+        }
     }
-    */
 
 }
