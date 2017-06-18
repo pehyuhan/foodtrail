@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5665B2B91EF13FC400E674AA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665B2B81EF13FC400E674AA /* Item.swift */; };
+		B8558BD41EF6E74500BCE4D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8558BD31EF6E74500BCE4D9 /* MapKit.framework */; };
+		B8558BD61EF6EAD400BCE4D9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8558BD51EF6EAD400BCE4D9 /* MapViewController.swift */; };
 		B8B960641EF04E5B00B72845 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B960631EF04E5B00B72845 /* DetailViewController.swift */; };
 		B8D03B731EF45C5F009DC0BB /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D03B721EF45C5F009DC0BB /* DetailTableViewCell.swift */; };
 		B8F1B0D51EEDB4950053B518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1B0D41EEDB4950053B518 /* AppDelegate.swift */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		5665B2B81EF13FC400E674AA /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B8558BD31EF6E74500BCE4D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B8558BD51EF6EAD400BCE4D9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B8B960631EF04E5B00B72845 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B8D03B721EF45C5F009DC0BB /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		B8F1B0D11EEDB4950053B518 /* FoodTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,17 +39,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8558BD41EF6E74500BCE4D9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8558BD21EF6E74500BCE4D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8558BD31EF6E74500BCE4D9 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8F1B0C81EEDB4950053B518 = {
 			isa = PBXGroup;
 			children = (
 				B8F1B0D31EEDB4950053B518 /* FoodTrail */,
 				B8F1B0D21EEDB4950053B518 /* Products */,
+				B8558BD21EF6E74500BCE4D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +83,7 @@
 				B8F1B0D81EEDB4950053B518 /* Main.storyboard */,
 				B8F1B0DB1EEDB4950053B518 /* Assets.xcassets */,
 				B8F1B0E01EEDB4950053B518 /* Info.plist */,
+				B8558BD51EF6EAD400BCE4D9 /* MapViewController.swift */,
 			);
 			path = FoodTrail;
 			sourceTree = "<group>";
@@ -106,6 +121,11 @@
 					B8F1B0D01EEDB4950053B518 = {
 						CreatedOnToolsVersion = 8.3.3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -150,6 +170,7 @@
 				B8F1B0E71EEDB64C0053B518 /* ItemTableViewController.swift in Sources */,
 				B8F1B0D51EEDB4950053B518 /* AppDelegate.swift in Sources */,
 				B8B960641EF04E5B00B72845 /* DetailViewController.swift in Sources */,
+				B8558BD61EF6EAD400BCE4D9 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

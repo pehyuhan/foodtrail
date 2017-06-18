@@ -141,26 +141,44 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-t6-ZNR">
-                                                    <rect key="frame" x="106" y="11" width="242" height="21"/>
+                                                    <rect key="frame" x="101" y="11" width="216" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="242" id="ljs-YR-M1T"/>
+                                                        <constraint firstAttribute="width" constant="216" id="ljs-YR-M1T"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZd-ic-zfC">
+                                                    <rect key="frame" x="331" y="2" width="36" height="30"/>
+                                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="Kwv-Jy-JWJ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="brn-ql-DJ1"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                                    <state key="normal" title="Map">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="s0N-e9-8Wn" kind="show" identifier="showMap" id="vS4-ye-z5Q"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Dpt-78-qQL" firstAttribute="top" secondItem="5sz-sS-IaM" secondAttribute="topMargin" constant="4" id="3Fq-X6-IuL"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Uta-t6-ZNR" secondAttribute="trailing" constant="19" id="7MA-e5-0Hj"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Uta-t6-ZNR" secondAttribute="trailing" constant="50" id="7MA-e5-0Hj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Dpt-78-qQL" secondAttribute="bottom" constant="3" id="EXC-ab-F5E"/>
                                                 <constraint firstItem="Dpt-78-qQL" firstAttribute="leading" secondItem="5sz-sS-IaM" secondAttribute="leadingMargin" constant="9" id="Hf2-9f-XpX"/>
+                                                <constraint firstItem="LZd-ic-zfC" firstAttribute="bottom" secondItem="Uta-t6-ZNR" secondAttribute="bottom" id="Nfv-fT-z0Y"/>
                                                 <constraint firstItem="Uta-t6-ZNR" firstAttribute="top" secondItem="5sz-sS-IaM" secondAttribute="topMargin" constant="3" id="mxQ-o6-AmP"/>
+                                                <constraint firstAttribute="trailing" secondItem="LZd-ic-zfC" secondAttribute="trailing" constant="8" id="qeZ-Tl-yVv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Uta-t6-ZNR" secondAttribute="bottom" constant="4" id="ywn-O1-FM3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="fieldLabel" destination="Dpt-78-qQL" id="C4c-3n-ndh"/>
+                                            <outlet property="mapButton" destination="LZd-ic-zfC" id="z7C-sU-ibp"/>
                                             <outlet property="valueLabel" destination="Uta-t6-ZNR" id="trY-Vm-Ehj"/>
                                         </connections>
                                     </tableViewCell>
@@ -181,6 +199,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tO5-r8-6Ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1680.8" y="-51.724137931034484"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="Pz0-Jq-AcO">
+            <objects>
+                <viewController id="s0N-e9-8Wn" customClass="MapViewController" customModule="FoodTrail" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eJe-5c-4fe"/>
+                        <viewControllerLayoutGuide type="bottom" id="meu-nR-g33"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rYF-yr-Jai">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="l5J-cO-tqy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="l5J-cO-tqy" id="B4a-1m-gPf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Vz-XY-Pri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351.1999999999998" y="-51.724137931034484"/>
         </scene>
         <!--FoodTrail-->
         <scene sceneID="m8N-7X-oRS">
