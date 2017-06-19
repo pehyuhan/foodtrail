@@ -351,6 +351,9 @@
                                                     <state key="normal" title="Yes">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateIsVisitedWithSender:" destination="BOt-uk-ojq" eventType="touchUpInside" id="alC-FI-bbG"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LfP-dg-Olc">
                                                     <rect key="frame" x="76" y="44" width="45" height="30"/>
@@ -359,6 +362,9 @@
                                                     <state key="normal" title="No">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="updateIsVisitedWithSender:" destination="BOt-uk-ojq" eventType="touchUpInside" id="jWn-jl-Ktc"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -380,10 +386,18 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="SmH-rX-2V5">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="save" destination="BOt-uk-ojq" id="bpt-AL-fXD"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="zki-N9-IQQ" id="pHF-gP-6aG"/>
+                        <outlet property="locationTextField" destination="FqA-DJ-fUB" id="HS0-2i-QM0"/>
+                        <outlet property="nameTextField" destination="oFL-ki-aah" id="tOG-UO-sgU"/>
+                        <outlet property="noButton" destination="LfP-dg-Olc" id="2Ql-wp-agf"/>
+                        <outlet property="typeTextField" destination="Zwz-ym-Gvv" id="82x-rK-G0s"/>
+                        <outlet property="yesButton" destination="QcQ-eQ-QfL" id="A4K-ur-c31"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGu-Kk-lbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
