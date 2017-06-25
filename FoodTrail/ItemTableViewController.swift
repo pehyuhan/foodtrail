@@ -16,7 +16,9 @@ class ItemTableViewController: UITableViewController {
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var followButton: UIButton!
+    @IBOutlet weak var authorLabel: UILabel!
     
+    var foodListTitle = "Sembawang Spring Estate"
     
     var items:[Item] = [
         Item(name: "Cafe Deadend", type: "Coffee & Tea Shop", location: "G/F, 72 Po Hing Fong, Sheung Wan, Hong Kong", image: "cafedeadend.jpg", isVisited: false),
@@ -53,6 +55,19 @@ class ItemTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        headerImage.image = UIImage(named: "cafedeadend.jpg")
+        headerImage.layer.cornerRadius = headerImage.frame.size.width / 2
+        headerImage.clipsToBounds = true
+        
+        titleLabel.text = foodListTitle
+        
+        self.automaticallyAdjustsScrollViewInsets = true
+        self.extendedLayoutIncludesOpaqueBars = true
+        self.tabBarController?.tabBar.isHidden = true
+        
+        tableView.estimatedSectionHeaderHeight = 44.0
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +81,25 @@ class ItemTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let v = UIView()
+        v.backgroundColor = .white
+        let randomPickButton = UIButton(frame: CGRect(x: 0, y: 0, width: 375, height: 44))
+        randomPickButton.backgroundColor = UIColor(red: 238.0/255.0, green: 186.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+        randomPickButton.setTitle("RANDOM PICK", for: .normal)
+        randomPickButton.setTitleColor(.white, for: .normal)
+        randomPickButton.addTarget(self, action: #selector(randomPickButtonTapped), for: .touchUpInside)
+        
+        randomPickButton.contentHorizontalAlignment = .center
+        
+        v.addSubview(randomPickButton)
+        return v
+    }
+    
+    func randomPickButtonTapped() {
+        print("Button pressed")
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
