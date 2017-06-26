@@ -12,6 +12,10 @@
 		B8558BD41EF6E74500BCE4D9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8558BD31EF6E74500BCE4D9 /* MapKit.framework */; };
 		B8558BD61EF6EAD400BCE4D9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8558BD51EF6EAD400BCE4D9 /* MapViewController.swift */; };
 		B8B960641EF04E5B00B72845 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B960631EF04E5B00B72845 /* DetailViewController.swift */; };
+		B8C3F7591F00E4F400EB2D95 /* Foodlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3F7581F00E4F400EB2D95 /* Foodlist.swift */; };
+		B8C3F75B1F00E61600EB2D95 /* Foodlists.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3F75A1F00E61600EB2D95 /* Foodlists.swift */; };
+		B8C3F75D1F00E96300EB2D95 /* FoodlistsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3F75C1F00E96300EB2D95 /* FoodlistsCollectionViewController.swift */; };
+		B8C3F75F1F01039500EB2D95 /* FoodlistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C3F75E1F01039500EB2D95 /* FoodlistCollectionViewCell.swift */; };
 		B8D03B731EF45C5F009DC0BB /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D03B721EF45C5F009DC0BB /* DetailTableViewCell.swift */; };
 		B8F1B0D51EEDB4950053B518 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F1B0D41EEDB4950053B518 /* AppDelegate.swift */; };
 		B8F1B0DA1EEDB4950053B518 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8F1B0D81EEDB4950053B518 /* Main.storyboard */; };
@@ -26,6 +30,10 @@
 		B8558BD31EF6E74500BCE4D9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B8558BD51EF6EAD400BCE4D9 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B8B960631EF04E5B00B72845 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B8C3F7581F00E4F400EB2D95 /* Foodlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foodlist.swift; sourceTree = "<group>"; };
+		B8C3F75A1F00E61600EB2D95 /* Foodlists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foodlists.swift; sourceTree = "<group>"; };
+		B8C3F75C1F00E96300EB2D95 /* FoodlistsCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodlistsCollectionViewController.swift; sourceTree = "<group>"; };
+		B8C3F75E1F01039500EB2D95 /* FoodlistCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodlistCollectionViewCell.swift; sourceTree = "<group>"; };
 		B8D03B721EF45C5F009DC0BB /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		B8F1B0D11EEDB4950053B518 /* FoodTrail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTrail.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F1B0D41EEDB4950053B518 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,17 +84,21 @@
 		B8F1B0D31EEDB4950053B518 /* FoodTrail */ = {
 			isa = PBXGroup;
 			children = (
+				B8F1B0DB1EEDB4950053B518 /* Assets.xcassets */,
 				B8F1B0D41EEDB4950053B518 /* AppDelegate.swift */,
 				B8F1B0E61EEDB64C0053B518 /* ItemTableViewController.swift */,
 				B8F1B0EA1EEDBDC30053B518 /* CustomTableViewCell.swift */,
 				B8B960631EF04E5B00B72845 /* DetailViewController.swift */,
 				5665B2B81EF13FC400E674AA /* Item.swift */,
 				B8D03B721EF45C5F009DC0BB /* DetailTableViewCell.swift */,
-				B8F1B0D81EEDB4950053B518 /* Main.storyboard */,
-				B8F1B0DB1EEDB4950053B518 /* Assets.xcassets */,
-				B8F1B0E01EEDB4950053B518 /* Info.plist */,
 				B8558BD51EF6EAD400BCE4D9 /* MapViewController.swift */,
 				56C5ADA51EF7C0700068D0FA /* AddTableViewController.swift */,
+				B8C3F7581F00E4F400EB2D95 /* Foodlist.swift */,
+				B8C3F75A1F00E61600EB2D95 /* Foodlists.swift */,
+				B8C3F75C1F00E96300EB2D95 /* FoodlistsCollectionViewController.swift */,
+				B8C3F75E1F01039500EB2D95 /* FoodlistCollectionViewCell.swift */,
+				B8F1B0D81EEDB4950053B518 /* Main.storyboard */,
+				B8F1B0E01EEDB4950053B518 /* Info.plist */,
 			);
 			path = FoodTrail;
 			sourceTree = "<group>";
@@ -123,6 +135,7 @@
 				TargetAttributes = {
 					B8F1B0D01EEDB4950053B518 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -170,8 +183,12 @@
 				B8D03B731EF45C5F009DC0BB /* DetailTableViewCell.swift in Sources */,
 				5665B2B91EF13FC400E674AA /* Item.swift in Sources */,
 				B8F1B0EB1EEDBDC30053B518 /* CustomTableViewCell.swift in Sources */,
+				B8C3F75D1F00E96300EB2D95 /* FoodlistsCollectionViewController.swift in Sources */,
+				B8C3F75F1F01039500EB2D95 /* FoodlistCollectionViewCell.swift in Sources */,
+				B8C3F75B1F00E61600EB2D95 /* Foodlists.swift in Sources */,
 				B8F1B0E71EEDB64C0053B518 /* ItemTableViewController.swift in Sources */,
 				B8F1B0D51EEDB4950053B518 /* AppDelegate.swift in Sources */,
+				B8C3F7591F00E4F400EB2D95 /* Foodlist.swift in Sources */,
 				B8B960641EF04E5B00B72845 /* DetailViewController.swift in Sources */,
 				B8558BD61EF6EAD400BCE4D9 /* MapViewController.swift in Sources */,
 				56C5ADA61EF7C0700068D0FA /* AddTableViewController.swift in Sources */,
