@@ -86,7 +86,7 @@ class ItemTableViewController: UITableViewController {
         let v = UIView()
         v.backgroundColor = .white
         let randomPickButton = UIButton(frame: CGRect(x: 0, y: 0, width: 375, height: 44))
-        randomPickButton.backgroundColor = UIColor(red: 238.0/255.0, green: 186.0/255.0, blue: 25.0/255.0, alpha: 1.0)
+        randomPickButton.backgroundColor = UIColor(red: 210.0/255.0, green: 87.0/255.0, blue: 87.0/255.0, alpha: 1.0)
         randomPickButton.setTitle("RANDOM PICK", for: .normal)
         randomPickButton.setTitleColor(.white, for: .normal)
         randomPickButton.addTarget(self, action: #selector(randomPickButtonTapped), for: .touchUpInside)
