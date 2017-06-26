@@ -27,16 +27,15 @@ class FoodlistsCollectionViewController: UICollectionViewController {
         layout.itemSize = CGSize(width: width, height: width + heightAdjustment)
 
     }
-
     
     // MARK: - UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return foodlists.numberOfSections
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return foodlists.numberOfFoodlists
+        return foodlists.numberOfFoodlistsInSection(index: section)
     }
     
     private struct Storyboard {
@@ -52,8 +51,18 @@ class FoodlistsCollectionViewController: UICollectionViewController {
 
         return cell
     }
-
-
+    
+    // Section Header View
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
+        
+        if let foodlist = foodlists.foodlistForItemAtIndexPath(indexPath: indexPath as NSIndexPath) {
+            sectionHeaderView.foodlist = foodlist
+        }
+        
+        return sectionHeaderView
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

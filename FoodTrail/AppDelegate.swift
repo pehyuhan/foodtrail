@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
         
-        statusBar.backgroundColor = UIColor(red: 61.0/255.0, green: 137.0/255.0, blue: 76.0/255.0, alpha: 1.0)
+        statusBar.backgroundColor = UIColor(red: 176.0/255.0, green: 40.0/255.0, blue: 40.0/255.0, alpha: 1.0)
         
-        UINavigationBar.appearance().barTintColor = UIColor(red: 19.0/255.0, green: 118.0/255.0, blue: 46.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = UIColor(red: 161.0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0)
         
         UINavigationBar.appearance().tintColor = UIColor.white
         
