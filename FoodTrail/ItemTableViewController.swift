@@ -48,6 +48,12 @@ class ItemTableViewController: UITableViewController {
         
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        if let pageViewController =
+            storyboard?.instantiateViewController(withIdentifier: "PageViewController") as?
+            PageViewController {
+            self.present(pageViewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
